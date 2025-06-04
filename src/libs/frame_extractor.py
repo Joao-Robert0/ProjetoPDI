@@ -1,10 +1,11 @@
 import cv2
 import os
 
-class extractor:
+class Extractor:
   total_frames = 0
   video = None
   video_path = None
+  fps = 0
   interval = 0 #intervalo de tempo em que pegaremos os prints
 
   def __init__(self, video_path = "./videos/ep1.mkv", interval = 3):
@@ -52,7 +53,7 @@ class extractor:
   def closeVideo(self):
     if self.video:
       self.video.release()
-    
-    def __del__(self):
-      self.closeVideo()
+
+  def __del__(self):  # Move this to class level, not inside closeVideo
+    self.closeVideo()
 

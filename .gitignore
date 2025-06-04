@@ -33,6 +33,7 @@ wheels/
 # Project specific
 frames/
 videos/
+enhanced/
 *.mkv
 *.mp4
 *.avi
